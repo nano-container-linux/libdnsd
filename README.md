@@ -1,8 +1,9 @@
+
 # libdnsd
 
-Bibliothèque de helpers partagés pour les projets `dnsd` et `dnsctl`.
+Shared helper library for the `dnsd` and `dnsctl` projects.
 
-- Fournit des helpers SSH, ACME, noms canoniques et helpers gRPC.
-- Conçue pour être importée par `github.com/nano-container-linux/dnsd` et `dnsctl`.
+- Provides SSH signing helpers, ACME token helpers, name normalization utilities, and gRPC helper functions.
+- Intended to be imported by `github.com/nano-container-linux/dnsd` and `github.com/nano-container-linux/dnsctl`.
 
-Voir les fichiers sources pour la documentation des fonctions.
+See the source files for usage examples and API details.
