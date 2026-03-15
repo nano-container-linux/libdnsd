@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  test:
+    cmds:
+      - go test ./...
+    silent: false
+
+  ci:
+    cmds:
+      - go test ./...
+    silent: false
