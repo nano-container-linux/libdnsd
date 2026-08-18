@@ -1,6 +1,6 @@
 module github.com/nano-container-linux/libdnsd
 
-go 1.25.6
+go 1.26.4
 
 require (
 	golang.org/x/crypto v0.51.0
