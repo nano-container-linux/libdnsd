@@ -23,10 +23,14 @@ jobs:
           # directory to prepend goes in $GITHUB_PATH instead.
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
-      - name: Run tests via pkgx dev
+      - name: Run tests with a pkgx-provided Go
         run: |
           set -eux
+          # Fail loudly here rather than as a missing command below.
           pkgx --version
-          # The module is at the repository root; there is no libdnsd/ directory
-          # to cd into.
-          pkgx dev -- go test ./...
+          # `pkgx dev -- go test ./...` is not the right invocation: `dev` takes
+          # a directory, so it read "go" as one and died with
+          # "not a directory: .../go". `+go` asks pkgx for the Go package and
+          # then runs the command. The module is at the repository root, so
+          # there is no subdirectory to cd into either.
+          pkgx +go -- go test ./...
