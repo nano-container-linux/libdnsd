@@ -1,0 +1,6 @@
+module: github.com/nano-container-linux/libdnsd
+build:
+  ldflags: -s -w
+
+tasks:
+  test: go test ./...
